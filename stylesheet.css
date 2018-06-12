@@ -1,0 +1,309 @@
+html {
+	font : normal normal 12px helvetica, sans-serif;
+	line-height : 150%;
+}
+
+body {
+	font : normal normal 12px helvetica, sans-serif;
+}
+
+
+/*HHC LOGO TEXT */
+#logo {
+	position: relative;
+	display: inline;
+	left: 25px;
+	font-family: 'EB Garamond', serif;
+	font-size: xx-large;
+	text-decoration: none;
+}
+
+#logo a:hover {
+	text-decoration-style: dotted;
+}
+
+/* NAVIGATION LINKS */
+#pages {
+	position: relative;
+    left: 50px;
+    letter-spacing: 0px;
+    font-size: 15px;
+    display: inline-block;
+    z-index: 2;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    clear: both;
+    overflow: hidden;
+    text-align: left;
+    display: inline-block;
+}
+
+/*HEADER IMAGE */
+#header_image {
+	position: relative;
+}
+
+#header_image img {
+	height: auto; 
+	width: auto; 
+	max-width: 100%;
+	text-align: center;
+}
+
+/* TITLE */
+#title {
+	text-decoration: none;
+	text-align:center;
+	color: black;
+}
+
+/* DESCRIPTION */
+#description {
+	margin-top: -25px;
+	font-weight: normal;
+	text-align:center;
+}
+
+/* POST CONTENT */
+#posts {
+	padding-top: 35px;
+	text-align:center;
+}
+
+/* POST TITLE */
+#post_title {
+	font-style:italic;
+}
+
+/* POST BODY */
+#post_body {
+	margin:auto;
+	text-align:left;
+	width:25%;
+}
+
+/* FOOTER */
+#footer {
+	text-align : center;
+}
+
+/* HOVER OVER TEXT */
+a:hover {
+	text-decoration : none;
+}
+
+
+/* WEBSITE LINKS */
+
+	/* unvisited link */
+	a:link {
+		color: black;
+		text-decoration: underline;
+	}
+	
+	/* mouse over link */
+	#pages a:link:hover {
+		text-decoration: none;
+	}
+
+	/* visited link */
+	a:link:visited {
+		color: purple;
+	}
+
+	/* selected link */
+	a:link:active {
+		text-decoration: italic;
+	} 
+
+/* Next Memes */
+	
+strong, b {
+	font-weight : bold;
+}
+
+em, i {
+	font-style : italic;
+}
+q:before {
+	content : '???';
+}
+q:after {
+	content : '???';
+}
+
+ul#posts, ul#pages {
+	text-align : center;
+}
+
+h1 a {
+	text-decoration : none;
+}
+
+h3, div.content p {
+	margin-bottom : 1.5em;
+}
+
+div.photo_div, #header_image_div {
+	line-height : 0;
+}
+
+blockquote {
+	border-left : 1px solid #999;
+	margin-left : 1em;
+	padding-left : 1em;
+	margin-bottom : 1em;
+}
+
+li.page {
+	display : inline;
+	margin : 0 2em;
+}
+
+li.post ul li {
+	list-style-type : disc;
+	list-style-position : outside;
+}
+
+li.post ol li {
+	list-style-type : decimal;
+	list-style-position : outside;
+}
+
+h1, h3 {
+	font-weight : bold;
+}
+
+h1 {
+	text-transform : uppercase;
+	font-size : 64px;
+	line-height : 72px;
+}
+
+/* ACCORDION SLIDER */
+.accordion {
+  width: 100%;
+  max-width: 75%;
+  /* height: 250px; */
+  overflow: hidden;
+  margin: 50px auto;
+}
+
+.accordion ul {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+.accordion ul li {
+  display: table-cell;
+  vertical-align: bottom;
+  position: relative;
+  width: 16.666%;
+  /* height: 250px; */
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 500ms ease;
+}
+
+.accordion ul li div {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.accordion ul li div a {
+  display: block;
+  height: 720px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  vertical-align: bottom;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  color: #fff;
+  text-decoration: none;
+  font-family: Open Sans, sans-serif;
+  transition: all 200ms ease;
+}
+
+.accordion ul li div a * {
+  opacity: 0;
+  margin: 0;
+  width: 100%;
+  text-overflow: ellipsis;
+  position: relative;
+  z-index: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-transform: translateX(-20px);
+  transform: translateX(-20px);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+
+.accordion ul li div a h2 {
+  font-family: Montserrat, sans-serif;
+  text-overflow: clip;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  top: 160px;
+  background: #00000080;
+}
+
+.accordion ul li div a p {
+  top: 160px;
+  font-size: 13.5px;
+  background: #00000080;
+}
+
+/*background images */
+
+.accordion ul li:nth-child(1) { background-image: url("images/slider1.jpg"); }
+
+.accordion ul li:nth-child(2) { background-image: url("images/slider2.jpg"); }
+
+.accordion ul li:nth-child(3) { background-image: url("images/slider3.jpg"); }
+
+.accordion ul li:nth-child(4) { background-image: url("images/slider4.jpg"); }
+
+.accordion ul li:nth-child(5) { background-image: url("images/slider5.jpg"); }
+
+.accordion ul li:nth-child(6) { background-image: url("images/slider6.jpg"); }
+
+/* Create the expand afferct */
+
+.accordion ul:hover li { width: 8%; }
+
+.accordion ul:hover li:hover { width: 60%; }
+
+.accordion ul:hover li:hover a { background: rgba(0, 0, 0, 0.4); }
+
+.accordion ul:hover li:hover a * {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* Destroy the accordion slider and display as an image list when the screen size is smaller than 600px. */
+
+@media screen and (max-width: 600px) {
+
+.accordion {
+	height: auto;
+}
+
+.accordion ul li,
+.accordion ul li:hover,
+.accordion ul:hover li,
+.accordion ul:hover li:hover {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  -webkit-transition: none;
+  transition: none;
+}
