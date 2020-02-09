@@ -25,7 +25,7 @@ body {
 /* NAVIGATION LINKS */
 #pages {
 	position: relative;
-    left: 50px;
+	left: 50px;
     letter-spacing: 0px;
     font-size: 15px;
     display: inline-block;
@@ -41,13 +41,13 @@ body {
 /*HEADER IMAGE */
 #header_image {
 	position: relative;
+	text-align: center;
 }
 
 #header_image img {
 	height: auto; 
 	width: auto; 
 	max-width: 100%;
-	text-align: center;
 }
 
 /* TITLE */
