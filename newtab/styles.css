@@ -8,6 +8,12 @@ body {
 	width: 100%;
 	height: 100%;
 }
+.ytp-title-text {
+	font-size:0px
+}
+.ytp-chrome-top ytp-show-cards-title {
+	opacity:0
+}
 .yt-cover{
 	top: 0;
 	bottom:0;
