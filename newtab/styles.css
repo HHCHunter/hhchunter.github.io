@@ -25,7 +25,7 @@ body {
 	content: '';
 }
 
-.yt-video>iframe {
+.yt-video > iframe {
 	position: absolute;
 	width: 100%;
 }
