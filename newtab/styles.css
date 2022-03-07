@@ -18,3 +18,18 @@ body {
 	height: 100%;
 	width: 100%;
 }
+
+.yt-video::after {
+  padding-top: 56.25%; /* 16:9 ratio - divide height by width and multiply by 100 */
+  display: block;
+  content: '';
+}
+
+.yt-video>iframe{
+  display:block;
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+}
