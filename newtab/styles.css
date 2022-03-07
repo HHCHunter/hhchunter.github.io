@@ -13,19 +13,30 @@ body {
 }
 
 .yt-video {
-	z-index: 1;
-	position: relative;
-	height: 100%;
-	width: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
-.yt-video::after {
-	padding-top: 56.25%; /* 16:9 ratio - divide height by width and multiply by 100 */
-	display: block;
-	content: '';
+.yt-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
 }
 
-.yt-video > iframe {
-	position: absolute;
-	width: 100%;
+@media (min-aspect-ratio: 16/9) {
+  .video-background iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 56.25vw;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-background iframe {
+    /* width = 100 / (9 / 16) = 177.777777 */
+    width: 177.78vh;
+  }
 }
