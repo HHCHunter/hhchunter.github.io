@@ -19,7 +19,7 @@ body {
   height: 100vh;
 }
 
-.yt-video iframe {
+.yt-video > iframe {
   position: absolute;
   top: 50%;
   left: 50%;
