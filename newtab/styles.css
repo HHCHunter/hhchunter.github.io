@@ -5,18 +5,18 @@ body {
 
 .yt-cover{
 	top: 0;
-	bottom:0;
-	right:0;
-	left:0;
+	bottom: 0;
+	right: 0;
+	left: 0;
 	position: absolute;
-	z-index:100;
+	z-index: 100;
 }
 
 .yt-video {
 	z-index: 1;
 	position: fixed;
-	height: 100%;
-	width: 100%;
+	width: 100vw;
+	display: inline-block;
 }
 
 .yt-video::after {
@@ -26,10 +26,10 @@ body {
 }
 
 .yt-video>iframe{
-  display:block;
-  width:100%;
-  height:100%;
-  position:absolute;
-  top:0;
-  left:0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
