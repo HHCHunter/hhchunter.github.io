@@ -4,13 +4,34 @@ body {
 	overflow: hidden;
 }
 
+.CityTempTime {
+    position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 3;
+	padding: 20px;
+	background-color: #7f7f7f80;
+	border: 2px solid black;
+}
+
+#time {
+  text-align: center;
+}
+
+.CityTemp p {
+	text-align: center;
+	display: inline-block;
+	margin: 0;
+}
+
+/* YOUTUBE RELATED SHIT STARTS HERE */
 .yt-cover {
 	top: 0;
 	bottom: 0;
 	right: 0;
 	left: 0;
 	position: absolute;
-	z-index: 100;
+	z-index: 2;
 }
 
 .yt-video {
@@ -18,8 +39,10 @@ body {
 	position: relative;
 	height: 100%;
 	width: 100%;
+	-moz-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+	-webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
+	mask-image: linear-gradient(to top, black 0%, transparent 100%);
 }
-
 .yt-video::after {
 	padding-top: 56.25%; /* 16:9 ratio - divide height by width and multiply by 100 */
 	display: block;
@@ -45,3 +68,5 @@ body {
         height:  100%;
     }
 }
+
+/* YOUTUBE RELATED SHIT ENDS HERE */
