@@ -1,27 +1,41 @@
+/* Import Eurostile font */
+@import url('https://fonts.googleapis.com/css2?family=Eurostile&display=swap');
+
 body {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+	font-family: 'Eurostile', sans-serif;
 }
 
 .CityTempTime {
-    position: fixed;
-	top: 50%;
-	left: 50%;
+	position: fixed;
 	z-index: 3;
-	padding: 20px;
-	background-color: #7f7f7f80;
-	border: 2px solid black;
+	top: 40%;
+	left: 33%;
+	color: white;
 }
 
-#time {
-  text-align: center;
-}
-
-.CityTemp p {
-	text-align: center;
-	display: inline-block;
+#clock {
+	font-size: 6vw;
 	margin: 0;
+}
+
+.info {
+	display: flex;
+	justify-content: center;
+	line-height: 0;
+	font-size: 1vw;
+}
+
+#city {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#temp {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /* YOUTUBE RELATED SHIT STARTS HERE */
@@ -39,9 +53,6 @@ body {
 	position: relative;
 	height: 100%;
 	width: 100%;
-	-moz-mask-image: linear-gradient(to top, black 0%, transparent 100%);
-	-webkit-mask-image: linear-gradient(to top, black 0%, transparent 100%);
-	mask-image: linear-gradient(to top, black 0%, transparent 100%);
 }
 .yt-video::after {
 	padding-top: 56.25%; /* 16:9 ratio - divide height by width and multiply by 100 */
@@ -54,7 +65,7 @@ body {
 	width: 100%;
 }
 
-@media(max-aspect-ratio: 1440/810) {
+@media(max-aspect-ratio: 16/9) {
     body {
         position: relative;
         min-height: 100vh;
