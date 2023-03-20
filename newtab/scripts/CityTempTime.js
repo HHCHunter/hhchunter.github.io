@@ -12,23 +12,35 @@ if (navigator.geolocation) {
       .then(data => {
         const city = data.city;
         const timezone = data.timezone;
-        const temperatureUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OpenWeatherAPIKey}&units=metric`;
+        const WeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OpenWeatherAPIKey}&units=metric`;
         const timeUrl = `https://worldtimeapi.org/api/timezone/${timezone}`;
 
         document.getElementById("city").textContent = city;
 
-        const updateTemperature = () => {
-          fetch(temperatureUrl)
-            .then(response => response.json())
-            .then(data => {
-              const temperature = data.main.temp;
-              const celsiusLogo = '\u2103';
-              const temperatureString = `${temperature} ${celsiusLogo}`;
-              document.getElementById("temp").textContent = temperatureString;
-            });
-        };
-        updateTemperature();
-        setInterval(updateTemperature, 60000);
+		const updateWeather = () => {
+		  fetch(WeatherUrl)
+			.then(response => response.json())
+			.then(data => {
+			  let temperature = data.main.temp;
+			  temperature = Math.round(temperature); // Round to nearest integer
+			  const celsiusLogo = '\u2103';
+			  const temperatureString = `${temperature}${celsiusLogo}`;
+			  document.getElementById("temp").textContent = temperatureString;
+
+			  let windSpeed = data.wind.speed;
+			  windSpeed = Math.round(windSpeed); // Round to nearest integer
+			  const windDirectionInDegrees = data.wind.deg;
+			  
+			  const cardinalDirections=['N','NE','E','SE','S','SW','W','NW'];
+			  const index=Math.round(windDirectionInDegrees/45)%8;
+			  const cardinalDirection=cardinalDirections[index];
+			  
+			  const windString=`\u1F32C: ${windSpeed}m/s ${cardinalDirection}`;
+			  document.getElementById("wind").textContent=windString;
+			});
+		};
+        updateWeather();
+        setInterval(updateWeather, 60000);
 
         setInterval(() => {
           fetch(timeUrl)
