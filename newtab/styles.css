@@ -1,11 +1,14 @@
 /* Import Eurostile font */
-@import url('https://fonts.googleapis.com/css2?family=Eurostile&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 body {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	font-family: 'Eurostile', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	font-size: 18px;
+	letter-spacing: 0.05em;
 }
 
 .CityTempTime {
