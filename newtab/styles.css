@@ -41,6 +41,11 @@ body {
   margin-right: 10px;
 }
 
+#wind {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 /* YOUTUBE RELATED SHIT STARTS HERE */
 .yt-cover {
 	top: 0;

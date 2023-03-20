@@ -35,7 +35,7 @@ if (navigator.geolocation) {
 			  const index=Math.round(windDirectionInDegrees/45)%8;
 			  const cardinalDirection=cardinalDirections[index];
 			  
-			  const windString=`\u1F32C: ${windSpeed}m/s ${cardinalDirection}`;
+			  const windString=`W: ${windSpeed}m/s ${cardinalDirection}`;
 			  document.getElementById("wind").textContent=windString;
 			});
 		};
