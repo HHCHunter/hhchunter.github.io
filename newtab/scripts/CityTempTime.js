@@ -1,65 +1,39 @@
-// Example cities and their coordinates.
-const cities = [
-  { name: "New York", latitude: 40.7128, longitude: -74.0060 },
-  { name: "Los Angeles", latitude: 34.0522, longitude: -118.2437 },
-  { name: "Chicago", latitude: 41.8781, longitude: -87.6298 },
-  { name: "Perth", latitude: -31.9505, longitude: 115.8605 }
-];
+// Insert your OpenWeather API key here
+const apiKey = 'db414e034946bc0b13e3baf78888ecea';
 
-// Calculate the distance between two points on Earth (simplified calculation)
-function calculateDistance(lat1, lon1, lat2, lon2) {
-  const R = 6371; // Earth's radius in km
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLon = (lon2 - lon1) * Math.PI / 180;
-  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  const distance = R * c;
-  return distance;
+// Function to fetch weather data from OpenWeather API using coordinates
+function updateWeatherByCoordinates(lat, lon) {
+  // OpenWeather API endpoint for current weather with latitude and longitude
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+  fetch(apiUrl)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Update the DOM with the new city and weather data
+      document.getElementById("city").textContent = data.name;
+      document.getElementById("temp").textContent = `${data.main.temp}\u2103`;
+      document.getElementById("wind").textContent = `Wind: ${data.wind.speed}m/s`;
+    })
+    .catch(error => {
+      console.log('Error fetching and parsing data', error);
+      // Inform the user that the weather data could not be retrieved
+    });
 }
 
-// Find the closest city to the user's location
-function findClosestCity(lat, lon) {
-  let closestCity = cities[0];
-  let smallestDistance = calculateDistance(lat, lon, closestCity.latitude, closestCity.longitude);
-
-  for (let i = 1; i < cities.length; i++) {
-    let city = cities[i];
-    let distance = calculateDistance(lat, lon, city.latitude, city.longitude);
-    if (distance < smallestDistance) {
-      smallestDistance = distance;
-      closestCity = city;
-    }
-  }
-
-  return closestCity.name;
-}
-
+// Get the user's location, update the weather, and start the clock
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(position => {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
-    const city = findClosestCity(latitude, longitude);
-
-    document.getElementById("city").textContent = city;
-
-    // The rest of your code here
-
-    // Update the temperature and wind data
-    const updateWeather = () => {
-      // Static or dummy values for demonstration as you no longer use an API for weather
-      const temperature = 20; // Example static temperature
-      document.getElementById("temp").textContent = `${temperature}\u2103`;
-
-      const windSpeed = 5; // Example static wind speed
-      document.getElementById("wind").textContent = `W: ${windSpeed}m/s`;
-    };
-
-    updateWeather(); // Update weather on page load
-    // If needed, you can set an interval to update weather periodically
-    // setInterval(updateWeather, 60000); // Update weather every 60 seconds with the static values
-
+    
+    // Use coordinates to fetch and update weather
+    updateWeatherByCoordinates(latitude, longitude);
+    
     // Update the clock every second
     setInterval(() => {
       const time = new Date();
@@ -69,7 +43,12 @@ if (navigator.geolocation) {
       const ampm = time.getHours() < 12 ? 'AM' : 'PM';
       document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
     }, 1000);
+
+  }, error => {
+    console.error("Error occurred: " + error.message);
+    // Handle location errors here, maybe update the UI to inform the user
   });
 } else {
   console.log("Geolocation is not supported by this browser.");
+  // Possibly inform the user that geolocation is not available
 }
