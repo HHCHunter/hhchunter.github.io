@@ -31,8 +31,9 @@ if (navigator.geolocation) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     
-    // Use coordinates to fetch and update weather
+    // Fetch and update weather immediately, and then every 90 seconds
     updateWeatherByCoordinates(latitude, longitude);
+    setInterval(() => updateWeatherByCoordinates(latitude, longitude), 90000); // 90 seconds
     
     // Update the clock every second
     setInterval(() => {
