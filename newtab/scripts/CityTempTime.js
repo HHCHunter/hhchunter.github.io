@@ -42,9 +42,9 @@ if (navigator.geolocation) {
 			const minutes = time.getMinutes() < 10 ? `0${time.getMinutes()}` : time.getMinutes();
 			const seconds = time.getSeconds() < 10 ? `0${time.getSeconds()}` : time.getSeconds();
 			const ampm = time.getHours() < 12 ? 'AM' : 'PM';
-			document.getElementById("hour").textContent = hours;
-			document.getElementById("minute").textContent = minutes;
-			document.getElementById("second").textContent = seconds;
+			document.getElementById("hours").textContent = hours;
+			document.getElementById("minutes").textContent = minutes;
+			document.getElementById("seconds").textContent = seconds;
 			document.getElementById("ampm").textContent = ampm;
 		}, 1000);
 
