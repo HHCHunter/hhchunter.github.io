@@ -27,6 +27,14 @@ body {
 	justify-content: center
 }
 
+#hours, #minutes, #seconds {
+	width: 1em;
+}
+
+#ampm {
+	margin-left: 0.5em;
+}
+
 .info {
 	display: flex;
 	justify-content: center;
