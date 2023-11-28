@@ -27,6 +27,11 @@ body {
 	justify-content: center
 }
 
+#hours, minutes, seconds {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
 #seconds {
 	width: 1em;
 }
