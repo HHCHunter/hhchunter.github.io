@@ -27,7 +27,7 @@ body {
 	justify-content: center
 }
 
-#hours, #minutes, #seconds {
+#hours, #minutes, #seconds, #ampm {
 	margin-top: 0;
 	margin-bottom: 0;
 }
