@@ -45,9 +45,10 @@ if (navigator.geolocation) {
             const seconds = time.getSeconds() < 10 ? `0${time.getSeconds()}` : time.getSeconds();
             const ampm = time.getHours() < 12 ? 'AM' : 'PM';
 
-            // Update hour only if it has changed
+            // Update hour and AM/PM only if it has changed
             if (previousHour !== hours) {
                 document.getElementById("hours").textContent = `${hours}:`;
+                document.getElementById("ampm").textContent = ampm;
                 previousHour = hours;
             }
 
@@ -59,7 +60,6 @@ if (navigator.geolocation) {
 
             // Always update seconds
             document.getElementById("seconds").textContent = seconds;
-            document.getElementById("ampm").textContent = ampm;
         }, 1000);
 
     }, error => {
